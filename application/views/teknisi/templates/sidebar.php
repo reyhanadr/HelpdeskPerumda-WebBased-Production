@@ -36,7 +36,14 @@
             </li>
 
             <li class="heading">Terkait Pesan</li>
-            <li>
+            <li class="<?= ($active_menu === 'pesan-view') ? 'active' : ''; ?>">
+                <a href="<?= base_url('index.php/KelolaPesan'); ?>">
+                <i class="sidebar-item-icon fa fa-envelope"></i>
+                    <span class="nav-label">Daftar Pesan</span>
+                </a>
+            </li>
+
+            <!-- <li>
                 <a href="javascript:;"><i class="sidebar-item-icon fa fa-envelope"></i>
                     <span class="nav-label">Daftar Pesan</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level">
@@ -56,7 +63,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
 
 
 

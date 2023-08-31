@@ -14,10 +14,8 @@
     <link href="<?php echo base_url(); ?>./assets/vendors/select2/dist/css/select2.min.css" rel="stylesheet" />
 
     <link href="<?php echo base_url(); ?>./assets/vendors/DataTables/datatables.min.css" rel="stylesheet" />
-    <link href="<?php echo base_url(); ?>./assets/vendors/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css"
-        rel="stylesheet" />
-    <link href="<?php echo base_url(); ?>./assets/vendors/bootstrap-timepicker/css/bootstrap-timepicker.min.css"
-        rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>./assets/vendors/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>./assets/vendors/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" />
     <!-- THEME STYLES-->
     <link href="<?php echo base_url(); ?>assets/css/main.css" rel="stylesheet" />
     <!-- PAGE LEVEL STYLES-->
@@ -42,8 +40,7 @@
                         <a class="nav-link sidebar-toggler js-sidebar-toggler"><i class="ti-menu"></i></a>
                     </li>
                     <li>
-                        <form class="navbar-search" action="<?php echo site_url('Karyawan/Dashboard/Search'); ?>"
-                            method="GET">
+                        <form class="navbar-search" action="<?php echo site_url('Karyawan/Dashboard/Search'); ?>" method="GET">
                             <div class="rel">
                                 <span class="search-icon"><i class="ti-search"></i></span>
                                 <input class="form-control" name="keyword" placeholder="Search here...">
@@ -55,8 +52,7 @@
                 <!-- START TOP-RIGHT TOOLBAR-->
                 <ul class="nav navbar-toolbar">
                     <li class="dropdown dropdown-inbox">
-                        <a href="<?php echo base_url() ?>index.php/KelolaPesan" class="nav-link"><i
-                                class="fa fa-envelope-o"></i>
+                        <a href="<?php echo base_url()?>index.php/KelolaPesan/requestPesan" class="nav-link" ><i class="fa fa-envelope-o"></i>
                             <!-- <span class="badge badge-primary envelope-badge">9</span> -->
                         </a>
                         <!-- <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media">
@@ -123,40 +119,31 @@
                     <li class="dropdown dropdown-notification">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-bell-o rel">
-                                <span class="<?php if ($jml_notif > 0) {
-                                    echo 'notify-signal';
-                                } ?>"></span>
+                                <span class="<?php if ($jml_notif > 0) { echo 'notify-signal'; } ?>"></span>
                             </i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media">
                             <li class="dropdown-menu-header">
                                 <div>
-                                    <span><strong>
-                                            <?php echo $jml_notif ?> New
-                                        </strong> Notifications</span>
+                                    <span><strong><?php echo $jml_notif?> New</strong> Notifications</span>
                                 </div>
                             </li>
                             <li class="list-group list-group-divider scroller" data-height="240px" data-color="#71808f">
                                 <div>
-                                    <?php foreach ($notif as $notifikasi): ?>
-                                        <a href="<?php echo base_url() ?>index.php/<?php echo $notifikasi->link; ?>"
-                                            class="list-group-item">
-                                            <div class="media">
-                                                <div class="media-img">
-                                                    <span class="badge badge-success badge-big">
-                                                        <i class="fa fa-bell"></i>
-                                                    </span>
-                                                </div>
-                                                <div class="media-body">
-                                                    <div class="font-13">
-                                                        <?php echo $notifikasi->message_for_karyawan; ?>
-                                                    </div>
-                                                    <small class="text-muted">
-                                                        <?php echo $notifikasi->created_at; ?>
-                                                    </small>
-                                                </div>
+                                    <?php foreach ($notif as $notifikasi) : ?>
+                                    <a href="<?php echo base_url()?>index.php/<?php echo $notifikasi->link;?>" class="list-group-item">
+                                        <div class="media">
+                                            <div class="media-img">
+                                                <span class="badge badge-success badge-big">
+                                                    <i class="fa fa-bell"></i>
+                                                </span>
                                             </div>
-                                        </a>
+                                            <div class="media-body">
+                                                <div class="font-13"><?php echo $notifikasi->message_for_karyawan; ?></div>
+                                                <small class="text-muted"><?php echo $notifikasi->created_at; ?></small>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <?php endforeach; ?>
                                 </div>
                             </li>
@@ -165,16 +152,15 @@
                     <li class="dropdown dropdown-user">
                         <a class="nav-link dropdown-toggle link" data-toggle="dropdown">
                             <div style="width: 45px; height: 45px; overflow: hidden; border-radius: 50%; ">
-                                <img src="<?php echo base_url(); ?>./assets/img/users/<?php echo $users->foto_user ?>"
-                                    alt="User Foto" style="width: 100%; height: 100%; object-fit: cover; ">
+                                <img src="<?php echo base_url(); ?>./assets/img/users/<?php echo $users->foto_user?>" alt="User Foto" style="width: 100%; height: 100%; object-fit: cover; ">
                             </div>
                             <div style="margin-left: 10px;">
-                                <?php echo $this->session->userdata('username'); ?>
+                            <?php echo $this->session->userdata('username');?> 
                             </div>
                             <i class="fa fa-angle-down m-l-5"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="<?= base_url('karyawan/Profil'); ?>"><i
+                            <a class="dropdown-item" href="<?= base_url('index.php/Karyawan/Profil'); ?>"><i
                                     class="fa fa-user"></i>My Profile</a>
                             <li class="dropdown-divider"></li>
                             <a class="dropdown-item" href="<?php echo base_url('index.php/Home/logout'); ?>"><i

@@ -50,12 +50,33 @@
             pageLength: 10,
         });
     })
-
 </script>
 <!-- PLUGIN FONTAWESOME -->
 <script src="https://kit.fontawesome.com/eccb17b8b4.js" crossorigin="anonymous"></script>
-<!-- PLUGIN Summernote CSS dan JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.js"></script>
+<!-- JavaScript -->
+<script>
+$(document).ready(function() {
+    // Initialize tooltips
+    $('.combined-button').tooltip();
+
+    // Show modal when button is clicked
+    $('.combined-button').click(function() {
+        $('#myModal').modal('show');
+
+        var sesiPesan = $(this).data('sesi');
+        $('#sesi_pesan').text(sesiPesan);
+
+        var namaSender = $(this).data('nama');
+        $('#nama_sender').text(namaSender);
+
+        // Set the href of the Terima Pesan button
+        var terimaUrl = "<?= base_url('index.php/KelolaPesan/terimaPesanTeknisi/') ?>" + sesiPesan;
+        $('#terimaButton').attr('href', terimaUrl);
+    });
+});
+</script>
+
+
 <script>
     $(document).ready(function () {
         $('#summernote').summernote();

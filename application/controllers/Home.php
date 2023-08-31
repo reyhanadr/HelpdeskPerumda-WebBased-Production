@@ -33,8 +33,8 @@ class Home extends CI_Controller
             $session_data = array(
                 'user_id' => $users->user_id,
                 'username' => $users->username,
-                'role' => $users->role_id,
-                // Assume 'role' field in the database
+                'role' => $users->role_id, // Assume 'role' field in the database
+                'kategori' => $users->kategori_id, // Assume 'kategori_id' field in the database
                 'logged_in' => TRUE
             );
             $this->session->set_userdata($session_data);

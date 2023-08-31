@@ -55,11 +55,11 @@
                                 <td><?php echo $item->spesifikasi; ?></td>
                                 <td><?php echo $item->lokasi_fisik; ?></td>
                                 <td>
-                                    <?php if ($item->status_perangkat == 'PENDING'): ?>
+                                    <?php if ($item->status_perangkat == 'PENGAJUAN'): ?>
                                         <span class="badge badge-warning"><?php echo $item->status_perangkat; ?></span>
-                                    <?php elseif ($item->status_perangkat == 'FIXED'): ?>
+                                    <?php elseif ($item->status_perangkat == 'SELESAI'): ?>
                                         <span class="badge badge-success"><?php echo $item->status_perangkat; ?></span>
-                                    <?php elseif ($item->status_perangkat == 'RUNNING'): ?>
+                                    <?php elseif ($item->status_perangkat == 'BERJALAN'): ?>
                                         <span class="badge badge-success"><?php echo $item->status_perangkat; ?></span>
                                     <?php else: ?>
                                         <span class="badge badge-danger"><?php echo $item->status_perangkat; ?></span>

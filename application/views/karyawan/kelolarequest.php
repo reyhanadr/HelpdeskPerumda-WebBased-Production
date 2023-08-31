@@ -30,7 +30,7 @@
                      <tr>
                         <th class="text-center">ID Request</th>
                         <th class="text-center">Nama Perangkat</th>
-                        <th class="text-center">Penanggung Jawab</th>
+                        <th class="text-center">Perbaikan Oleh</th>
                         <th class="text-center">Departemen</th>
                         <th class="text-center">Tanggal Pelaporan</th>
                         <th class="text-center">Deskripsi Masalah</th>
@@ -46,7 +46,15 @@
                         <tr class="text-center">
                            <td><?php echo $ticket->request_id; ?></td>
                            <td><?php echo $ticket->nama_perangkat; ?></td>
-                           <td><?php echo $ticket->nama; ?></td>
+                           <td>
+                              <?php
+                              if (!empty($ticket->penanggung_jawab_nama)) {
+                                 echo $ticket->penanggung_jawab_nama;
+                              } else {
+                                 echo "Belum Ada";
+                              }
+                              ?>
+                           </td>
                            <td><?php echo $ticket->nama_departemen ; ?></td>
                            <td><?php echo $ticket->tanggal_dibuat; ?></td>
                            <td><?php echo $ticket->deskripsi_permasalahan; ?></td>
@@ -54,11 +62,11 @@
                            <td><img src="<?php echo base_url(); ?>/assets/img/request/<?php echo $ticket->foto?>" width="45px">
                            </td>
                            <td>
-                              <?php if ($ticket->status == 'PENDING'): ?>
+                              <?php if ($ticket->status == 'PENGAJUAN'): ?>
                                  <span class="badge badge-warning"><?php echo $ticket->status; ?></span>
-                              <?php elseif ($ticket->status == 'FIXED'): ?>
+                              <?php elseif ($ticket->status == 'SELESAI'): ?>
                                  <span class="badge badge-success"><?php echo $ticket->status; ?></span>
-                              <?php elseif ($ticket->status == 'RUNNING'): ?>
+                              <?php elseif ($ticket->status == 'BERJALAN'): ?>
                                  <span class="badge badge-success"><?php echo $ticket->status; ?></span>
                               <?php else: ?>
                                  <span class="badge badge-danger"><?php echo $ticket->status; ?></span>
