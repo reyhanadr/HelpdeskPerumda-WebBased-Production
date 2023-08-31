@@ -33,7 +33,10 @@
                      <tr>
                         <th class="text-center">ID Request</th>
                         <th class="text-center">Nama Perangkat</th>
+<<<<<<< HEAD
                         <th class="text-center">kategori</th>
+=======
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
                         <th class="text-center">Penanggung Jawab</th>
                         <th class="text-center">Departemen</th>
                         <th class="text-center">Tanggal Pelaporan</th>
@@ -55,9 +58,12 @@
                               <?php echo $ticket->nama_perangkat; ?>
                            </td>
                            <td>
+<<<<<<< HEAD
                               <?php echo $ticket->nama_kategori; ?>
                            </td>
                            <td>
+=======
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
                               <?php echo $ticket->nama; ?>
                            </td>
                            <td>
@@ -77,7 +83,11 @@
                            </td>
                            <td>
                               <?php if ($ticket->status == 'PENDING'): ?>
+<<<<<<< HEAD
                                  <span class="badge badge-secondary">
+=======
+                                 <span class="badge badge-warning">
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
                                     <?php echo $ticket->status; ?>
                                  </span>
                               <?php elseif ($ticket->status == 'FIXED'): ?>
@@ -85,10 +95,17 @@
                                     <?php echo $ticket->status; ?>
                                  </span>
                               <?php elseif ($ticket->status == 'RUNNING'): ?>
+<<<<<<< HEAD
                                  <span class="badge badge-warning">
                                     <?php echo $ticket->status; ?>
                                  </span>
                               <?php elseif ($ticket->status == 'NOT FIXED'): ?>
+=======
+                                 <span class="badge badge-success">
+                                    <?php echo $ticket->status; ?>
+                                 </span>
+                              <?php else: ?>
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
                                  <span class="badge badge-danger">
                                     <?php echo $ticket->status; ?>
                                  </span>
@@ -108,6 +125,7 @@
                                        <i class="fa-solid fa-check-to-slot font-14"></i>
                                     </button>
                                  </a>
+<<<<<<< HEAD
                                  <a href="<?php echo base_url('index.php/Teknisi/KelolaRequest/setStatusToFixed/' . $ticket->request_id); ?>"
                                     class="mr-2">
                                     <button class="btn btn-default btn-xs" data-toggle="tooltip"
@@ -120,6 +138,13 @@
                                     <button class="btn btn-default btn-xs" data-toggle="tooltip"
                                        data-original-title="Not Fixed">
                                        <i class="fa-solid fa-check-to-slot font-14"></i>
+=======
+                                 <a href="<?php echo base_url('index.php/Teknisi/KelolaRequest/tampilEditRequest/' . $ticket->request_id); ?>"
+                                    class="mr-2">
+                                    <button class="btn btn-default btn-xs" data-toggle="tooltip"
+                                       data-original-title="Edit">
+                                       <i class="fa fa-pencil font-14"></i>
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
                                     </button>
                                  </a>
                               </div>
@@ -133,4 +158,9 @@
          </div>
       </div>
    </div>
+<<<<<<< HEAD
    <!-- END PAGE CONTENT-->
+=======
+   <!-- END PAGE CONTENT-->
+</div>
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e

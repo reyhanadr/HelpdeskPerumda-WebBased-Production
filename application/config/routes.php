@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 defined('BASEPATH') or exit('No direct script access allowed');
+=======
+defined('BASEPATH') OR exit('No direct script access allowed');
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 /*
 | -------------------------------------------------------------------------
@@ -57,6 +61,7 @@ $route['Karyawan/KelolaRequest'] = 'Karyawan/KelolaRequest';
 $route['Karyawan/KelolaPerangkat'] = 'Karyawan/KelolaPerangkat';
 $route['Karyawan/Profil'] = 'Karyawan/Profil';
 
+<<<<<<< HEAD
 /*teknisi*/
 $route['Teknisi/Dashboard'] = 'Teknisi/Dashboard';
 $route['Teknisi/KelolaRequest'] = 'Teknisi/KelolaRequest';
@@ -65,3 +70,6 @@ $route['Teknisi/PesanMasuk'] = 'Teknisi/PesanMasuk';
 $route['Teknisi/PesanView'] = 'Teknisi/PesanView';
 $route['Teknisi/PesanKirim'] = 'Teknisi/PesanKirim';
 $route['Teknisi/Profil'] = 'Teknisi/Profil';
+=======
+
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e

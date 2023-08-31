@@ -8,9 +8,15 @@
             </div>
             <div class="admin-info">
                 <div class="font-strong">
+<<<<<<< HEAD
                     <?php echo $users->nama ?>
                 </div><small>
                     <?php echo $users->nama_kategori ?>
+=======
+                    <?php echo $users->nama; ?>
+                </div><small>
+                    <?php echo $users->nama_role; ?> <?php echo $users->nama_kategori; ?>
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
                 </small>
             </div>
         </div>
@@ -31,6 +37,7 @@
             <li class="<?= ($active_menu === 'kelolaPerangkat') ? 'active' : ''; ?>">
                 <a href="<?= base_url('index.php/Teknisi/KelolaPerangkat'); ?>"><i
                         class="sidebar-item-icon fa-solid fa-desktop"></i>
+<<<<<<< HEAD
                     <span class="nav-label">Daftar Perangkat</span>
                 </a>
             </li>
@@ -67,6 +74,12 @@
 
 
 
+=======
+                    <span class="nav-label">Kelola Perangkat</span>
+                </a>
+            </li>
+
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
             <li class="heading">Terkait Profil</li>
             <li class="<?= ($active_menu === 'kelolaprofil') ? 'active' : ''; ?>">
                 <a href="<?= base_url('index.php/Teknisi/Profil'); ?>"><i

@@ -36,7 +36,11 @@
  * @since	Version 1.0.0
  * @filesource
  */
+<<<<<<< HEAD
 defined('BASEPATH') or exit('No direct script access allowed');
+=======
+defined('BASEPATH') OR exit('No direct script access allowed');
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 /**
  * Loader Class
@@ -49,10 +53,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/userguide3/libraries/loader.html
  */
+<<<<<<< HEAD
 #[\AllowDynamicProperties]
 
 class CI_Loader
 {
+=======
+class CI_Loader {
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 	// All these are set automatically. Don't mess with them.
 	/**
@@ -67,63 +75,99 @@ class CI_Loader
 	 *
 	 * @var	array
 	 */
+<<<<<<< HEAD
 	protected $_ci_view_paths = array(VIEWPATH => TRUE);
+=======
+	protected $_ci_view_paths =	array(VIEWPATH	=> TRUE);
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 	/**
 	 * List of paths to load libraries from
 	 *
 	 * @var	array
 	 */
+<<<<<<< HEAD
 	protected $_ci_library_paths = array(APPPATH, BASEPATH);
+=======
+	protected $_ci_library_paths =	array(APPPATH, BASEPATH);
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 	/**
 	 * List of paths to load models from
 	 *
 	 * @var	array
 	 */
+<<<<<<< HEAD
 	protected $_ci_model_paths = array(APPPATH);
+=======
+	protected $_ci_model_paths =	array(APPPATH);
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 	/**
 	 * List of paths to load helpers from
 	 *
 	 * @var	array
 	 */
+<<<<<<< HEAD
 	protected $_ci_helper_paths = array(APPPATH, BASEPATH);
+=======
+	protected $_ci_helper_paths =	array(APPPATH, BASEPATH);
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 	/**
 	 * List of cached variables
 	 *
 	 * @var	array
 	 */
+<<<<<<< HEAD
 	protected $_ci_cached_vars = array();
+=======
+	protected $_ci_cached_vars =	array();
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 	/**
 	 * List of loaded classes
 	 *
 	 * @var	array
 	 */
+<<<<<<< HEAD
 	protected $_ci_classes = array();
+=======
+	protected $_ci_classes =	array();
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 	/**
 	 * List of loaded models
 	 *
 	 * @var	array
 	 */
+<<<<<<< HEAD
 	protected $_ci_models = array();
+=======
+	protected $_ci_models =	array();
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 	/**
 	 * List of loaded helpers
 	 *
 	 * @var	array
 	 */
+<<<<<<< HEAD
 	protected $_ci_helpers = array();
+=======
+	protected $_ci_helpers =	array();
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 	/**
 	 * List of class name mappings
 	 *
 	 * @var	array
 	 */
+<<<<<<< HEAD
 	protected $_ci_varmap = array(
+=======
+	protected $_ci_varmap =	array(
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 		'unit_test' => 'unit',
 		'user_agent' => 'agent'
 	);
@@ -193,6 +237,7 @@ class CI_Loader
 	 */
 	public function library($library, $params = NULL, $object_name = NULL)
 	{
+<<<<<<< HEAD
 		if (empty($library)) {
 			return $this;
 		} elseif (is_array($library)) {
@@ -200,6 +245,22 @@ class CI_Loader
 				if (is_int($key)) {
 					$this->library($value, $params);
 				} else {
+=======
+		if (empty($library))
+		{
+			return $this;
+		}
+		elseif (is_array($library))
+		{
+			foreach ($library as $key => $value)
+			{
+				if (is_int($key))
+				{
+					$this->library($value, $params);
+				}
+				else
+				{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 					$this->library($key, $params, $value);
 				}
 			}
@@ -207,7 +268,12 @@ class CI_Loader
 			return $this;
 		}
 
+<<<<<<< HEAD
 		if ($params !== NULL && !is_array($params)) {
+=======
+		if ($params !== NULL && ! is_array($params))
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			$params = NULL;
 		}
 
@@ -229,10 +295,21 @@ class CI_Loader
 	 */
 	public function model($model, $name = '', $db_conn = FALSE)
 	{
+<<<<<<< HEAD
 		if (empty($model)) {
 			return $this;
 		} elseif (is_array($model)) {
 			foreach ($model as $key => $value) {
+=======
+		if (empty($model))
+		{
+			return $this;
+		}
+		elseif (is_array($model))
+		{
+			foreach ($model as $key => $value)
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				is_int($key) ? $this->model($value, '', $db_conn) : $this->model($key, $value, $db_conn);
 			}
 
@@ -242,7 +319,12 @@ class CI_Loader
 		$path = '';
 
 		// Is the model in a sub-folder? If so, parse out the filename and path.
+<<<<<<< HEAD
 		if (($last_slash = strrpos($model, '/')) !== FALSE) {
+=======
+		if (($last_slash = strrpos($model, '/')) !== FALSE)
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			// The path is in front of the last slash
 			$path = substr($model, 0, ++$last_slash);
 
@@ -250,21 +332,43 @@ class CI_Loader
 			$model = substr($model, $last_slash);
 		}
 
+<<<<<<< HEAD
 		if (empty($name)) {
 			$name = $model;
 		}
 
 		if (in_array($name, $this->_ci_models, TRUE)) {
+=======
+		if (empty($name))
+		{
+			$name = $model;
+		}
+
+		if (in_array($name, $this->_ci_models, TRUE))
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			return $this;
 		}
 
 		$CI =& get_instance();
+<<<<<<< HEAD
 		if (isset($CI->$name)) {
 			throw new RuntimeException('The model name you are loading is the name of a resource that is already being used: ' . $name);
 		}
 
 		if ($db_conn !== FALSE && !class_exists('CI_DB', FALSE)) {
 			if ($db_conn === TRUE) {
+=======
+		if (isset($CI->$name))
+		{
+			throw new RuntimeException('The model name you are loading is the name of a resource that is already being used: '.$name);
+		}
+
+		if ($db_conn !== FALSE && ! class_exists('CI_DB', FALSE))
+		{
+			if ($db_conn === TRUE)
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				$db_conn = '';
 			}
 
@@ -279,6 +383,7 @@ class CI_Loader
 		//       to cache them for later use and that prevents
 		//       MY_Model from being an abstract class and is
 		//       sub-optimal otherwise anyway.
+<<<<<<< HEAD
 		if (!class_exists('CI_Model', FALSE)) {
 			$app_path = APPPATH . 'core' . DIRECTORY_SEPARATOR;
 			if (file_exists($app_path . 'Model.php')) {
@@ -300,10 +405,41 @@ class CI_Loader
 				}
 
 				log_message('info', config_item('subclass_prefix') . 'Model class loaded');
+=======
+		if ( ! class_exists('CI_Model', FALSE))
+		{
+			$app_path = APPPATH.'core'.DIRECTORY_SEPARATOR;
+			if (file_exists($app_path.'Model.php'))
+			{
+				require_once($app_path.'Model.php');
+				if ( ! class_exists('CI_Model', FALSE))
+				{
+					throw new RuntimeException($app_path."Model.php exists, but doesn't declare class CI_Model");
+				}
+
+				log_message('info', 'CI_Model class loaded');
+			}
+			elseif ( ! class_exists('CI_Model', FALSE))
+			{
+				require_once(BASEPATH.'core'.DIRECTORY_SEPARATOR.'Model.php');
+			}
+
+			$class = config_item('subclass_prefix').'Model';
+			if (file_exists($app_path.$class.'.php'))
+			{
+				require_once($app_path.$class.'.php');
+				if ( ! class_exists($class, FALSE))
+				{
+					throw new RuntimeException($app_path.$class.".php exists, but doesn't declare class ".$class);
+				}
+
+				log_message('info', config_item('subclass_prefix').'Model class loaded');
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			}
 		}
 
 		$model = ucfirst($model);
+<<<<<<< HEAD
 		if (!class_exists($model, FALSE)) {
 			foreach ($this->_ci_model_paths as $mod_path) {
 				if (!file_exists($mod_path . 'models/' . $path . $model . '.php')) {
@@ -313,22 +449,52 @@ class CI_Loader
 				require_once($mod_path . 'models/' . $path . $model . '.php');
 				if (!class_exists($model, FALSE)) {
 					throw new RuntimeException($mod_path . "models/" . $path . $model . ".php exists, but doesn't declare class " . $model);
+=======
+		if ( ! class_exists($model, FALSE))
+		{
+			foreach ($this->_ci_model_paths as $mod_path)
+			{
+				if ( ! file_exists($mod_path.'models/'.$path.$model.'.php'))
+				{
+					continue;
+				}
+
+				require_once($mod_path.'models/'.$path.$model.'.php');
+				if ( ! class_exists($model, FALSE))
+				{
+					throw new RuntimeException($mod_path."models/".$path.$model.".php exists, but doesn't declare class ".$model);
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				}
 
 				break;
 			}
 
+<<<<<<< HEAD
 			if (!class_exists($model, FALSE)) {
 				throw new RuntimeException('Unable to locate the model you have specified: ' . $model);
 			}
 		} elseif (!is_subclass_of($model, 'CI_Model')) {
 			throw new RuntimeException("Class " . $model . " already exists and doesn't extend CI_Model");
+=======
+			if ( ! class_exists($model, FALSE))
+			{
+				throw new RuntimeException('Unable to locate the model you have specified: '.$model);
+			}
+		}
+		elseif ( ! is_subclass_of($model, 'CI_Model'))
+		{
+			throw new RuntimeException("Class ".$model." already exists and doesn't extend CI_Model");
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 		}
 
 		$this->_ci_models[] = $name;
 		$model = new $model();
 		$CI->$name = $model;
+<<<<<<< HEAD
 		log_message('info', 'Model "' . get_class($model) . '" initialized');
+=======
+		log_message('info', 'Model "'.get_class($model).'" initialized');
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 		return $this;
 	}
 
@@ -351,6 +517,7 @@ class CI_Loader
 		$CI =& get_instance();
 
 		// Do we even need to load the database class?
+<<<<<<< HEAD
 		if ($return === FALSE && $query_builder === NULL && isset($CI->db) && is_object($CI->db) && !empty($CI->db->conn_id)) {
 			return FALSE;
 		}
@@ -358,6 +525,17 @@ class CI_Loader
 		require_once(BASEPATH . 'database/DB.php');
 
 		if ($return === TRUE) {
+=======
+		if ($return === FALSE && $query_builder === NULL && isset($CI->db) && is_object($CI->db) && ! empty($CI->db->conn_id))
+		{
+			return FALSE;
+		}
+
+		require_once(BASEPATH.'database/DB.php');
+
+		if ($return === TRUE)
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			return DB($params, $query_builder);
 		}
 
@@ -383,6 +561,7 @@ class CI_Loader
 	{
 		$CI =& get_instance();
 
+<<<<<<< HEAD
 		if (!is_object($db) or !($db instanceof CI_DB)) {
 			class_exists('CI_DB', FALSE) or $this->database();
 			$db =& $CI->db;
@@ -393,6 +572,20 @@ class CI_Loader
 		$class = 'CI_DB_' . $db->dbdriver . '_utility';
 
 		if ($return === TRUE) {
+=======
+		if ( ! is_object($db) OR ! ($db instanceof CI_DB))
+		{
+			class_exists('CI_DB', FALSE) OR $this->database();
+			$db =& $CI->db;
+		}
+
+		require_once(BASEPATH.'database/DB_utility.php');
+		require_once(BASEPATH.'database/drivers/'.$db->dbdriver.'/'.$db->dbdriver.'_utility.php');
+		$class = 'CI_DB_'.$db->dbdriver.'_utility';
+
+		if ($return === TRUE)
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			return new $class($db);
 		}
 
@@ -412,6 +605,7 @@ class CI_Loader
 	public function dbforge($db = NULL, $return = FALSE)
 	{
 		$CI =& get_instance();
+<<<<<<< HEAD
 		if (!is_object($db) or !($db instanceof CI_DB)) {
 			class_exists('CI_DB', FALSE) or $this->database();
 			$db =& $CI->db;
@@ -431,6 +625,33 @@ class CI_Loader
 		}
 
 		if ($return === TRUE) {
+=======
+		if ( ! is_object($db) OR ! ($db instanceof CI_DB))
+		{
+			class_exists('CI_DB', FALSE) OR $this->database();
+			$db =& $CI->db;
+		}
+
+		require_once(BASEPATH.'database/DB_forge.php');
+		require_once(BASEPATH.'database/drivers/'.$db->dbdriver.'/'.$db->dbdriver.'_forge.php');
+
+		if ( ! empty($db->subdriver))
+		{
+			$driver_path = BASEPATH.'database/drivers/'.$db->dbdriver.'/subdrivers/'.$db->dbdriver.'_'.$db->subdriver.'_forge.php';
+			if (file_exists($driver_path))
+			{
+				require_once($driver_path);
+				$class = 'CI_DB_'.$db->dbdriver.'_'.$db->subdriver.'_forge';
+			}
+		}
+		else
+		{
+			$class = 'CI_DB_'.$db->dbdriver.'_forge';
+		}
+
+		if ($return === TRUE)
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			return new $class($db);
 		}
 
@@ -491,7 +712,12 @@ class CI_Loader
 			? array($vars => $val)
 			: $this->_ci_prepare_view_vars($vars);
 
+<<<<<<< HEAD
 		foreach ($vars as $key => $val) {
+=======
+		foreach ($vars as $key => $val)
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			$this->_ci_cached_vars[$key] = $val;
 		}
 
@@ -552,6 +778,7 @@ class CI_Loader
 	 */
 	public function helper($helpers = array())
 	{
+<<<<<<< HEAD
 		is_array($helpers) or $helpers = array($helpers);
 		foreach ($helpers as &$helper) {
 			$filename = basename($helper);
@@ -560,46 +787,98 @@ class CI_Loader
 			$helper = $filepath . $filename;
 
 			if (isset($this->_ci_helpers[$helper])) {
+=======
+		is_array($helpers) OR $helpers = array($helpers);
+		foreach ($helpers as &$helper)
+		{
+			$filename = basename($helper);
+			$filepath = ($filename === $helper) ? '' : substr($helper, 0, strlen($helper) - strlen($filename));
+			$filename = strtolower(preg_replace('#(_helper)?(\.php)?$#i', '', $filename)).'_helper';
+			$helper   = $filepath.$filename;
+
+			if (isset($this->_ci_helpers[$helper]))
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				continue;
 			}
 
 			// Is this a helper extension request?
+<<<<<<< HEAD
 			$ext_helper = config_item('subclass_prefix') . $filename;
 			$ext_loaded = FALSE;
 			foreach ($this->_ci_helper_paths as $path) {
 				if (file_exists($path . 'helpers/' . $ext_helper . '.php')) {
 					include_once($path . 'helpers/' . $ext_helper . '.php');
+=======
+			$ext_helper = config_item('subclass_prefix').$filename;
+			$ext_loaded = FALSE;
+			foreach ($this->_ci_helper_paths as $path)
+			{
+				if (file_exists($path.'helpers/'.$ext_helper.'.php'))
+				{
+					include_once($path.'helpers/'.$ext_helper.'.php');
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 					$ext_loaded = TRUE;
 				}
 			}
 
 			// If we have loaded extensions - check if the base one is here
+<<<<<<< HEAD
 			if ($ext_loaded === TRUE) {
 				$base_helper = BASEPATH . 'helpers/' . $helper . '.php';
 				if (!file_exists($base_helper)) {
 					show_error('Unable to load the requested file: helpers/' . $helper . '.php');
+=======
+			if ($ext_loaded === TRUE)
+			{
+				$base_helper = BASEPATH.'helpers/'.$helper.'.php';
+				if ( ! file_exists($base_helper))
+				{
+					show_error('Unable to load the requested file: helpers/'.$helper.'.php');
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				}
 
 				include_once($base_helper);
 				$this->_ci_helpers[$helper] = TRUE;
+<<<<<<< HEAD
 				log_message('info', 'Helper loaded: ' . $helper);
+=======
+				log_message('info', 'Helper loaded: '.$helper);
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				continue;
 			}
 
 			// No extensions found ... try loading regular helpers and/or overrides
+<<<<<<< HEAD
 			foreach ($this->_ci_helper_paths as $path) {
 				if (file_exists($path . 'helpers/' . $helper . '.php')) {
 					include_once($path . 'helpers/' . $helper . '.php');
 
 					$this->_ci_helpers[$helper] = TRUE;
 					log_message('info', 'Helper loaded: ' . $helper);
+=======
+			foreach ($this->_ci_helper_paths as $path)
+			{
+				if (file_exists($path.'helpers/'.$helper.'.php'))
+				{
+					include_once($path.'helpers/'.$helper.'.php');
+
+					$this->_ci_helpers[$helper] = TRUE;
+					log_message('info', 'Helper loaded: '.$helper);
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 					break;
 				}
 			}
 
 			// unable to load the helper
+<<<<<<< HEAD
 			if (!isset($this->_ci_helpers[$helper])) {
 				show_error('Unable to load the requested file: helpers/' . $helper . '.php');
+=======
+			if ( ! isset($this->_ci_helpers[$helper]))
+			{
+				show_error('Unable to load the requested file: helpers/'.$helper.'.php');
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			}
 		}
 
@@ -674,16 +953,30 @@ class CI_Loader
 	 */
 	public function driver($library, $params = NULL, $object_name = NULL)
 	{
+<<<<<<< HEAD
 		if (is_array($library)) {
 			foreach ($library as $key => $value) {
 				if (is_int($key)) {
 					$this->driver($value, $params);
 				} else {
+=======
+		if (is_array($library))
+		{
+			foreach ($library as $key => $value)
+			{
+				if (is_int($key))
+				{
+					$this->driver($value, $params);
+				}
+				else
+				{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 					$this->driver($key, $params, $value);
 				}
 			}
 
 			return $this;
+<<<<<<< HEAD
 		} elseif (empty($library)) {
 			return FALSE;
 		}
@@ -691,12 +984,30 @@ class CI_Loader
 		if (!class_exists('CI_Driver_Library', FALSE)) {
 			// We aren't instantiating an object here, just making the base class available
 			require BASEPATH . 'libraries/Driver.php';
+=======
+		}
+		elseif (empty($library))
+		{
+			return FALSE;
+		}
+
+		if ( ! class_exists('CI_Driver_Library', FALSE))
+		{
+			// We aren't instantiating an object here, just making the base class available
+			require BASEPATH.'libraries/Driver.php';
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 		}
 
 		// We can save the loader some time since Drivers will *always* be in a subfolder,
 		// and typically identically named to the library
+<<<<<<< HEAD
 		if (!strpos($library, '/')) {
 			$library = ucfirst($library) . '/' . $library;
+=======
+		if ( ! strpos($library, '/'))
+		{
+			$library = ucfirst($library).'/'.$library;
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 		}
 
 		return $this->library($library, $params, $object_name);
@@ -721,13 +1032,21 @@ class CI_Loader
 	 */
 	public function add_package_path($path, $view_cascade = TRUE)
 	{
+<<<<<<< HEAD
 		$path = rtrim($path, '/') . '/';
+=======
+		$path = rtrim($path, '/').'/';
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 		array_unshift($this->_ci_library_paths, $path);
 		array_unshift($this->_ci_model_paths, $path);
 		array_unshift($this->_ci_helper_paths, $path);
 
+<<<<<<< HEAD
 		$this->_ci_view_paths = array($path . 'views/' => $view_cascade) + $this->_ci_view_paths;
+=======
+		$this->_ci_view_paths = array($path.'views/' => $view_cascade) + $this->_ci_view_paths;
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 		// Add config file path
 		$config =& $this->_ci_get_component('config');
@@ -767,25 +1086,51 @@ class CI_Loader
 	{
 		$config =& $this->_ci_get_component('config');
 
+<<<<<<< HEAD
 		if ($path === '') {
+=======
+		if ($path === '')
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			array_shift($this->_ci_library_paths);
 			array_shift($this->_ci_model_paths);
 			array_shift($this->_ci_helper_paths);
 			array_shift($this->_ci_view_paths);
 			array_pop($config->_config_paths);
+<<<<<<< HEAD
 		} else {
 			$path = rtrim($path, '/') . '/';
 			foreach (array('_ci_library_paths', '_ci_model_paths', '_ci_helper_paths') as $var) {
 				if (($key = array_search($path, $this->{$var})) !== FALSE) {
+=======
+		}
+		else
+		{
+			$path = rtrim($path, '/').'/';
+			foreach (array('_ci_library_paths', '_ci_model_paths', '_ci_helper_paths') as $var)
+			{
+				if (($key = array_search($path, $this->{$var})) !== FALSE)
+				{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 					unset($this->{$var}[$key]);
 				}
 			}
 
+<<<<<<< HEAD
 			if (isset($this->_ci_view_paths[$path . 'views/'])) {
 				unset($this->_ci_view_paths[$path . 'views/']);
 			}
 
 			if (($key = array_search($path, $config->_config_paths)) !== FALSE) {
+=======
+			if (isset($this->_ci_view_paths[$path.'views/']))
+			{
+				unset($this->_ci_view_paths[$path.'views/']);
+			}
+
+			if (($key = array_search($path, $config->_config_paths)) !== FALSE)
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				unset($config->_config_paths[$key]);
 			}
 		}
@@ -794,7 +1139,11 @@ class CI_Loader
 		$this->_ci_library_paths = array_unique(array_merge($this->_ci_library_paths, array(APPPATH, BASEPATH)));
 		$this->_ci_helper_paths = array_unique(array_merge($this->_ci_helper_paths, array(APPPATH, BASEPATH)));
 		$this->_ci_model_paths = array_unique(array_merge($this->_ci_model_paths, array(APPPATH)));
+<<<<<<< HEAD
 		$this->_ci_view_paths = array_merge($this->_ci_view_paths, array(APPPATH . 'views/' => TRUE));
+=======
+		$this->_ci_view_paths = array_merge($this->_ci_view_paths, array(APPPATH.'views/' => TRUE));
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 		$config->_config_paths = array_unique(array_merge($config->_config_paths, array(APPPATH)));
 
 		return $this;
@@ -818,13 +1167,19 @@ class CI_Loader
 	protected function _ci_load($_ci_data)
 	{
 		// Set the default data variables
+<<<<<<< HEAD
 		foreach (array('_ci_view', '_ci_vars', '_ci_path', '_ci_return') as $_ci_val) {
+=======
+		foreach (array('_ci_view', '_ci_vars', '_ci_path', '_ci_return') as $_ci_val)
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			$$_ci_val = isset($_ci_data[$_ci_val]) ? $_ci_data[$_ci_val] : FALSE;
 		}
 
 		$file_exists = FALSE;
 
 		// Set the path to the requested file
+<<<<<<< HEAD
 		if (is_string($_ci_path) && $_ci_path !== '') {
 			$_ci_x = explode('/', $_ci_path);
 			$_ci_file = end($_ci_x);
@@ -835,25 +1190,60 @@ class CI_Loader
 			foreach ($this->_ci_view_paths as $_ci_view_file => $cascade) {
 				if (file_exists($_ci_view_file . $_ci_file)) {
 					$_ci_path = $_ci_view_file . $_ci_file;
+=======
+		if (is_string($_ci_path) && $_ci_path !== '')
+		{
+			$_ci_x = explode('/', $_ci_path);
+			$_ci_file = end($_ci_x);
+		}
+		else
+		{
+			$_ci_ext = pathinfo($_ci_view, PATHINFO_EXTENSION);
+			$_ci_file = ($_ci_ext === '') ? $_ci_view.'.php' : $_ci_view;
+
+			foreach ($this->_ci_view_paths as $_ci_view_file => $cascade)
+			{
+				if (file_exists($_ci_view_file.$_ci_file))
+				{
+					$_ci_path = $_ci_view_file.$_ci_file;
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 					$file_exists = TRUE;
 					break;
 				}
 
+<<<<<<< HEAD
 				if (!$cascade) {
+=======
+				if ( ! $cascade)
+				{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 					break;
 				}
 			}
 		}
 
+<<<<<<< HEAD
 		if (!$file_exists && !file_exists($_ci_path)) {
 			show_error('Unable to load the requested file: ' . $_ci_file);
+=======
+		if ( ! $file_exists && ! file_exists($_ci_path))
+		{
+			show_error('Unable to load the requested file: '.$_ci_file);
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 		}
 
 		// This allows anything loaded using $this->load (views, files, etc.)
 		// to become accessible from within the Controller and Model functions.
 		$_ci_CI =& get_instance();
+<<<<<<< HEAD
 		foreach (get_object_vars($_ci_CI) as $_ci_key => $_ci_var) {
 			if (!isset($this->$_ci_key)) {
+=======
+		foreach (get_object_vars($_ci_CI) as $_ci_key => $_ci_var)
+		{
+			if ( ! isset($this->$_ci_key))
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				$this->$_ci_key =& $_ci_CI->$_ci_key;
 			}
 		}
@@ -866,7 +1256,11 @@ class CI_Loader
 		 * the two types and cache them so that views that are embedded within
 		 * other views can have access to these variables.
 		 */
+<<<<<<< HEAD
 		empty($_ci_vars) or $this->_ci_cached_vars = array_merge($this->_ci_cached_vars, $_ci_vars);
+=======
+		empty($_ci_vars) OR $this->_ci_cached_vars = array_merge($this->_ci_cached_vars, $_ci_vars);
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 		extract($this->_ci_cached_vars);
 
 		/*
@@ -885,6 +1279,7 @@ class CI_Loader
 		// If the PHP installation does not support short tags we'll
 		// do a little string replacement, changing the short tags
 		// to standard PHP echo statements.
+<<<<<<< HEAD
 		if (!is_php('5.4') && !ini_get('short_open_tag') && config_item('rewrite_short_tags') === TRUE) {
 			echo eval('?>' . preg_replace('/;*\s*\?>/', '; ?>', str_replace('<?=', '<?php echo ', file_get_contents($_ci_path))));
 		} else {
@@ -895,6 +1290,22 @@ class CI_Loader
 
 		// Return the file data if requested
 		if ($_ci_return === TRUE) {
+=======
+		if ( ! is_php('5.4') && ! ini_get('short_open_tag') && config_item('rewrite_short_tags') === TRUE)
+		{
+			echo eval('?>'.preg_replace('/;*\s*\?>/', '; ?>', str_replace('<?=', '<?php echo ', file_get_contents($_ci_path))));
+		}
+		else
+		{
+			include($_ci_path); // include() vs include_once() allows for multiple views with the same name
+		}
+
+		log_message('info', 'File loaded: '.$_ci_path);
+
+		// Return the file data if requested
+		if ($_ci_return === TRUE)
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			$buffer = ob_get_contents();
 			@ob_end_clean();
 			return $buffer;
@@ -909,9 +1320,18 @@ class CI_Loader
 		 * it can be seen and included properly by the first included
 		 * template and any subsequent ones. Oy!
 		 */
+<<<<<<< HEAD
 		if (ob_get_level() > $this->_ci_ob_level + 1) {
 			ob_end_flush();
 		} else {
+=======
+		if (ob_get_level() > $this->_ci_ob_level + 1)
+		{
+			ob_end_flush();
+		}
+		else
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			$_ci_CI->output->append_output(ob_get_contents());
 			@ob_end_clean();
 		}
@@ -941,34 +1361,64 @@ class CI_Loader
 
 		// Was the path included with the class name?
 		// We look for a slash to determine this
+<<<<<<< HEAD
 		if (($last_slash = strrpos($class, '/')) !== FALSE) {
+=======
+		if (($last_slash = strrpos($class, '/')) !== FALSE)
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			// Extract the path
 			$subdir = substr($class, 0, ++$last_slash);
 
 			// Get the filename from the path
 			$class = substr($class, $last_slash);
+<<<<<<< HEAD
 		} else {
+=======
+		}
+		else
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			$subdir = '';
 		}
 
 		$class = ucfirst($class);
 
 		// Is this a stock library? There are a few special conditions if so ...
+<<<<<<< HEAD
 		if (file_exists(BASEPATH . 'libraries/' . $subdir . $class . '.php')) {
+=======
+		if (file_exists(BASEPATH.'libraries/'.$subdir.$class.'.php'))
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			return $this->_ci_load_stock_library($class, $subdir, $params, $object_name);
 		}
 
 		// Safety: Was the class already loaded by a previous call?
+<<<<<<< HEAD
 		if (class_exists($class, FALSE)) {
 			$property = $object_name;
 			if (empty($property)) {
+=======
+		if (class_exists($class, FALSE))
+		{
+			$property = $object_name;
+			if (empty($property))
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				$property = strtolower($class);
 				isset($this->_ci_varmap[$property]) && $property = $this->_ci_varmap[$property];
 			}
 
 			$CI =& get_instance();
+<<<<<<< HEAD
 			if (isset($CI->$property)) {
 				log_message('debug', $class . ' class already loaded. Second attempt ignored.');
+=======
+			if (isset($CI->$property))
+			{
+				log_message('debug', $class.' class already loaded. Second attempt ignored.');
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				return;
 			}
 
@@ -976,6 +1426,7 @@ class CI_Loader
 		}
 
 		// Let's search for the requested library file and load it.
+<<<<<<< HEAD
 		foreach ($this->_ci_library_paths as $path) {
 			// BASEPATH has already been checked for
 			if ($path === BASEPATH) {
@@ -985,6 +1436,20 @@ class CI_Loader
 			$filepath = $path . 'libraries/' . $subdir . $class . '.php';
 			// Does the file exist? No? Bummer...
 			if (!file_exists($filepath)) {
+=======
+		foreach ($this->_ci_library_paths as $path)
+		{
+			// BASEPATH has already been checked for
+			if ($path === BASEPATH)
+			{
+				continue;
+			}
+
+			$filepath = $path.'libraries/'.$subdir.$class.'.php';
+			// Does the file exist? No? Bummer...
+			if ( ! file_exists($filepath))
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				continue;
 			}
 
@@ -993,6 +1458,7 @@ class CI_Loader
 		}
 
 		// One last attempt. Maybe the library is in a subdirectory, but it wasn't specified?
+<<<<<<< HEAD
 		if ($subdir === '') {
 			return $this->_ci_load_library($class . '/' . $class, $params, $object_name);
 		}
@@ -1000,6 +1466,16 @@ class CI_Loader
 		// If we got this far we were unable to find the requested class.
 		log_message('error', 'Unable to load the requested class: ' . $class);
 		show_error('Unable to load the requested class: ' . $class);
+=======
+		if ($subdir === '')
+		{
+			return $this->_ci_load_library($class.'/'.$class, $params, $object_name);
+		}
+
+		// If we got this far we were unable to find the requested class.
+		log_message('error', 'Unable to load the requested class: '.$class);
+		show_error('Unable to load the requested class: '.$class);
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 	}
 
 	// --------------------------------------------------------------------
@@ -1020,23 +1496,44 @@ class CI_Loader
 	{
 		$prefix = 'CI_';
 
+<<<<<<< HEAD
 		if (class_exists($prefix . $library_name, FALSE)) {
 			if (class_exists(config_item('subclass_prefix') . $library_name, FALSE)) {
+=======
+		if (class_exists($prefix.$library_name, FALSE))
+		{
+			if (class_exists(config_item('subclass_prefix').$library_name, FALSE))
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				$prefix = config_item('subclass_prefix');
 			}
 
 			$property = $object_name;
+<<<<<<< HEAD
 			if (empty($property)) {
+=======
+			if (empty($property))
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				$property = strtolower($library_name);
 				isset($this->_ci_varmap[$property]) && $property = $this->_ci_varmap[$property];
 			}
 
 			$CI =& get_instance();
+<<<<<<< HEAD
 			if (!isset($CI->$property)) {
 				return $this->_ci_init_library($library_name, $prefix, $params, $object_name);
 			}
 
 			log_message('debug', $library_name . ' class already loaded. Second attempt ignored.');
+=======
+			if ( ! isset($CI->$property))
+			{
+				return $this->_ci_init_library($library_name, $prefix, $params, $object_name);
+			}
+
+			log_message('debug', $library_name.' class already loaded. Second attempt ignored.');
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			return;
 		}
 
@@ -1045,6 +1542,7 @@ class CI_Loader
 		array_pop($paths); // APPPATH (needs to be the first path checked)
 		array_unshift($paths, APPPATH);
 
+<<<<<<< HEAD
 		foreach ($paths as $path) {
 			if (file_exists($path = $path . 'libraries/' . $file_path . $library_name . '.php')) {
 				// Override
@@ -1065,11 +1563,43 @@ class CI_Loader
 			if (file_exists($path = $path . 'libraries/' . $file_path . $subclass . '.php')) {
 				include_once($path);
 				if (class_exists($subclass, FALSE)) {
+=======
+		foreach ($paths as $path)
+		{
+			if (file_exists($path = $path.'libraries/'.$file_path.$library_name.'.php'))
+			{
+				// Override
+				include_once($path);
+				if (class_exists($prefix.$library_name, FALSE))
+				{
+					return $this->_ci_init_library($library_name, $prefix, $params, $object_name);
+				}
+
+				log_message('debug', $path.' exists, but does not declare '.$prefix.$library_name);
+			}
+		}
+
+		include_once(BASEPATH.'libraries/'.$file_path.$library_name.'.php');
+
+		// Check for extensions
+		$subclass = config_item('subclass_prefix').$library_name;
+		foreach ($paths as $path)
+		{
+			if (file_exists($path = $path.'libraries/'.$file_path.$subclass.'.php'))
+			{
+				include_once($path);
+				if (class_exists($subclass, FALSE))
+				{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 					$prefix = config_item('subclass_prefix');
 					break;
 				}
 
+<<<<<<< HEAD
 				log_message('debug', $path . ' exists, but does not declare ' . $subclass);
+=======
+				log_message('debug', $path.' exists, but does not declare '.$subclass);
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			}
 		}
 
@@ -1096,6 +1626,7 @@ class CI_Loader
 	protected function _ci_init_library($class, $prefix, $config = FALSE, $object_name = NULL)
 	{
 		// Is there an associated config file for this class? Note: these should always be lowercase
+<<<<<<< HEAD
 		if ($config === NULL) {
 			// Fetch the config paths containing any package paths
 			$config_component = $this->_ci_get_component('config');
@@ -1119,37 +1650,95 @@ class CI_Loader
 						$found = TRUE;
 					} elseif (file_exists($path . 'config/' . ENVIRONMENT . '/' . ucfirst(strtolower($class)) . '.php')) {
 						include($path . 'config/' . ENVIRONMENT . '/' . ucfirst(strtolower($class)) . '.php');
+=======
+		if ($config === NULL)
+		{
+			// Fetch the config paths containing any package paths
+			$config_component = $this->_ci_get_component('config');
+
+			if (is_array($config_component->_config_paths))
+			{
+				$found = FALSE;
+				foreach ($config_component->_config_paths as $path)
+				{
+					// We test for both uppercase and lowercase, for servers that
+					// are case-sensitive with regard to file names. Load global first,
+					// override with environment next
+					if (file_exists($path.'config/'.strtolower($class).'.php'))
+					{
+						include($path.'config/'.strtolower($class).'.php');
+						$found = TRUE;
+					}
+					elseif (file_exists($path.'config/'.ucfirst(strtolower($class)).'.php'))
+					{
+						include($path.'config/'.ucfirst(strtolower($class)).'.php');
+						$found = TRUE;
+					}
+
+					if (file_exists($path.'config/'.ENVIRONMENT.'/'.strtolower($class).'.php'))
+					{
+						include($path.'config/'.ENVIRONMENT.'/'.strtolower($class).'.php');
+						$found = TRUE;
+					}
+					elseif (file_exists($path.'config/'.ENVIRONMENT.'/'.ucfirst(strtolower($class)).'.php'))
+					{
+						include($path.'config/'.ENVIRONMENT.'/'.ucfirst(strtolower($class)).'.php');
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 						$found = TRUE;
 					}
 
 					// Break on the first found configuration, thus package
 					// files are not overridden by default paths
+<<<<<<< HEAD
 					if ($found === TRUE) {
+=======
+					if ($found === TRUE)
+					{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 						break;
 					}
 				}
 			}
 		}
 
+<<<<<<< HEAD
 		$class_name = $prefix . $class;
 
 		// Is the class name valid?
 		if (!class_exists($class_name, FALSE)) {
 			log_message('error', 'Non-existent class: ' . $class_name);
 			show_error('Non-existent class: ' . $class_name);
+=======
+		$class_name = $prefix.$class;
+
+		// Is the class name valid?
+		if ( ! class_exists($class_name, FALSE))
+		{
+			log_message('error', 'Non-existent class: '.$class_name);
+			show_error('Non-existent class: '.$class_name);
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 		}
 
 		// Set the variable name we will assign the class to
 		// Was a custom class name supplied? If so we'll use it
+<<<<<<< HEAD
 		if (empty($object_name)) {
 			$object_name = strtolower($class);
 			if (isset($this->_ci_varmap[$object_name])) {
+=======
+		if (empty($object_name))
+		{
+			$object_name = strtolower($class);
+			if (isset($this->_ci_varmap[$object_name]))
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				$object_name = $this->_ci_varmap[$object_name];
 			}
 		}
 
 		// Don't overwrite existing properties
 		$CI =& get_instance();
+<<<<<<< HEAD
 		if (isset($CI->$object_name)) {
 			if ($CI->$object_name instanceof $class_name) {
 				log_message('debug', $class_name . " has already been instantiated as '" . $object_name . "'. Second attempt aborted.");
@@ -1157,6 +1746,17 @@ class CI_Loader
 			}
 
 			show_error("Resource '" . $object_name . "' already exists and is not a " . $class_name . " instance.");
+=======
+		if (isset($CI->$object_name))
+		{
+			if ($CI->$object_name instanceof $class_name)
+			{
+				log_message('debug', $class_name." has already been instantiated as '".$object_name."'. Second attempt aborted.");
+				return;
+			}
+
+			show_error("Resource '".$object_name."' already exists and is not a ".$class_name." instance.");
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 		}
 
 		// Save the class name and object name
@@ -1180,6 +1780,7 @@ class CI_Loader
 	 */
 	protected function _ci_autoloader()
 	{
+<<<<<<< HEAD
 		if (file_exists(APPPATH . 'config/autoload.php')) {
 			include(APPPATH . 'config/autoload.php');
 		}
@@ -1189,39 +1790,87 @@ class CI_Loader
 		}
 
 		if (!isset($autoload)) {
+=======
+		if (file_exists(APPPATH.'config/autoload.php'))
+		{
+			include(APPPATH.'config/autoload.php');
+		}
+
+		if (file_exists(APPPATH.'config/'.ENVIRONMENT.'/autoload.php'))
+		{
+			include(APPPATH.'config/'.ENVIRONMENT.'/autoload.php');
+		}
+
+		if ( ! isset($autoload))
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			return;
 		}
 
 		// Autoload packages
+<<<<<<< HEAD
 		if (isset($autoload['packages'])) {
 			foreach ($autoload['packages'] as $package_path) {
+=======
+		if (isset($autoload['packages']))
+		{
+			foreach ($autoload['packages'] as $package_path)
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				$this->add_package_path($package_path);
 			}
 		}
 
 		// Load any custom config file
+<<<<<<< HEAD
 		if (count($autoload['config']) > 0) {
 			foreach ($autoload['config'] as $val) {
+=======
+		if (count($autoload['config']) > 0)
+		{
+			foreach ($autoload['config'] as $val)
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				$this->config($val);
 			}
 		}
 
 		// Autoload helpers and languages
+<<<<<<< HEAD
 		foreach (array('helper', 'language') as $type) {
 			if (isset($autoload[$type]) && count($autoload[$type]) > 0) {
+=======
+		foreach (array('helper', 'language') as $type)
+		{
+			if (isset($autoload[$type]) && count($autoload[$type]) > 0)
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				$this->$type($autoload[$type]);
 			}
 		}
 
 		// Autoload drivers
+<<<<<<< HEAD
 		if (isset($autoload['drivers'])) {
+=======
+		if (isset($autoload['drivers']))
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			$this->driver($autoload['drivers']);
 		}
 
 		// Load libraries
+<<<<<<< HEAD
 		if (isset($autoload['libraries']) && count($autoload['libraries']) > 0) {
 			// Load the database driver.
 			if (in_array('database', $autoload['libraries'])) {
+=======
+		if (isset($autoload['libraries']) && count($autoload['libraries']) > 0)
+		{
+			// Load the database driver.
+			if (in_array('database', $autoload['libraries']))
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				$this->database();
 				$autoload['libraries'] = array_diff($autoload['libraries'], array('database'));
 			}
@@ -1231,7 +1880,12 @@ class CI_Loader
 		}
 
 		// Autoload models
+<<<<<<< HEAD
 		if (isset($autoload['model'])) {
+=======
+		if (isset($autoload['model']))
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			$this->model($autoload['model']);
 		}
 	}
@@ -1249,14 +1903,26 @@ class CI_Loader
 	 */
 	protected function _ci_prepare_view_vars($vars)
 	{
+<<<<<<< HEAD
 		if (!is_array($vars)) {
+=======
+		if ( ! is_array($vars))
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			$vars = is_object($vars)
 				? get_object_vars($vars)
 				: array();
 		}
 
+<<<<<<< HEAD
 		foreach (array_keys($vars) as $key) {
 			if (strncmp($key, '_ci_', 4) === 0) {
+=======
+		foreach (array_keys($vars) as $key)
+		{
+			if (strncmp($key, '_ci_', 4) === 0)
+			{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 				unset($vars[$key]);
 			}
 		}
@@ -1279,4 +1945,8 @@ class CI_Loader
 		$CI =& get_instance();
 		return $CI->$component;
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e

@@ -36,7 +36,11 @@
  * @since	Version 1.0.0
  * @filesource
  */
+<<<<<<< HEAD
 defined('BASEPATH') or exit('No direct script access allowed');
+=======
+defined('BASEPATH') OR exit('No direct script access allowed');
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 /**
  * Application Controller Class
@@ -50,10 +54,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/userguide3/general/controllers.html
  */
+<<<<<<< HEAD
 #[\AllowDynamicProperties]
 
 class CI_Controller
 {
+=======
+class CI_Controller {
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 	/**
 	 * Reference to the CI singleton
@@ -81,7 +89,12 @@ class CI_Controller
 		// Assign all the class objects that were instantiated by the
 		// bootstrap file (CodeIgniter.php) to local class variables
 		// so that CI can run as one big super object.
+<<<<<<< HEAD
 		foreach (is_loaded() as $var => $class) {
+=======
+		foreach (is_loaded() as $var => $class)
+		{
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 			$this->$var =& load_class($class);
 		}
 
@@ -103,4 +116,8 @@ class CI_Controller
 		return self::$instance;
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e

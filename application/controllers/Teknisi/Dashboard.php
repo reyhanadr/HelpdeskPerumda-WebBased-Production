@@ -21,6 +21,7 @@ class Dashboard extends CI_Controller
 		}
 		$data['active_menu'] = 'Dashboard';
 		$data['title'] = 'Login Page';
+<<<<<<< HEAD
 		$username = $this->session->userdata('username'); // Mendapatkan username dari session
 		$kategori_id = $this->session->userdata('kategori_id'); // Mendapatkan kategori dari session
 
@@ -44,6 +45,28 @@ class Dashboard extends CI_Controller
 
 		// Dapatkan Jumlah Perangkat
 		$data['jml_perangkat'] = $this->UserModel->count_perangkat_by_kategori($kategori_id);
+=======
+
+		$username = $this->session->userdata('username'); // Mendapatkan data username dari session
+
+		// Kemudian Anda bisa meneruskan data username ke model
+		$data['tickets'] = $this->RequestModel->getTicketsWithDetails($username);
+		$data['perangkat'] = $this->PerangkatModel->getPerangkatUser($username);
+		$data['users'] = $this->UserModel->getUserByIdTeknisi($username);
+		$user_id = $this->session->userdata('user_id');
+
+		// Mendapatkan Notifikasi
+		$data['notif'] = $this->NotifikasiModel->get_notifikasi_by_id($user_id);
+		$data['jml_notif'] = $this->NotifikasiModel->count_notif_by_id($user_id);
+
+		// Dapatkan jumlah Request
+		$data['jml_pending'] = $this->UserModel->count_fixed_by_user_n_status($user_id, 'PENDING');
+		$data['jml_fixed'] = $this->UserModel->count_fixed_by_user_n_status($user_id, 'FIXED');
+		$data['jml_notfixed'] = $this->UserModel->count_fixed_by_user_n_status($user_id, 'NOTFIXED');
+
+		// Dapatkan Jumlah Perangkat
+		$data['jml_perangkat'] = $this->UserModel->count_perangkat_byuserid($user_id);
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 		$this->load->view('teknisi/templates/header', $data);
 		$this->load->view('teknisi/templates/sidebar', $data);

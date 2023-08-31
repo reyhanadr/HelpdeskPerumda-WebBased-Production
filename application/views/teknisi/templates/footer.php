@@ -76,6 +76,7 @@ $(document).ready(function() {
 });
 </script>
 
+<<<<<<< HEAD
 
 <script>
     $(document).ready(function () {
@@ -83,6 +84,8 @@ $(document).ready(function() {
     });
 </script>
 
+=======
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 </body>
 
 </html>

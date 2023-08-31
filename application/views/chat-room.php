@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <div class="content-wrapper">
+=======
+                <div class="content-wrapper">
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
                     <!-- START PAGE CONTENT-->
                     <div class="page-heading">
                         <h1 class="page-title">Live Chat Room</h1>

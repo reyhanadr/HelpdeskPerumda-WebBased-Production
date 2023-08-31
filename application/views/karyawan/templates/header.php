@@ -160,7 +160,11 @@
                             <i class="fa fa-angle-down m-l-5"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right">
+<<<<<<< HEAD
                             <a class="dropdown-item" href="<?= base_url('index.php/Karyawan/Profil'); ?>"><i
+=======
+                            <a class="dropdown-item" href="<?= base_url('karyawan/Profil'); ?>"><i
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
                                     class="fa fa-user"></i>My Profile</a>
                             <li class="dropdown-divider"></li>
                             <a class="dropdown-item" href="<?php echo base_url('index.php/Home/logout'); ?>"><i

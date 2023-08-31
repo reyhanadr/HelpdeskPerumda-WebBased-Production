@@ -12,7 +12,13 @@
         <div class="ibox">
             <div class="ibox-head">
                 <div class="ibox-title">Data Perangkat</div>
+<<<<<<< HEAD
 
+=======
+                <a href="<?= base_url() ?>index.php/Teknisi/KelolaPerangkat/tampilTambahPerangkat">
+                    <button class="btn btn-primary" type="submit">Tambah Perangkat</button>
+                </a>
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
             </div>
             <div class="ibox-body">
                 <?php if ($this->session->flashdata('success')): ?>
@@ -41,6 +47,10 @@
                             <th class="text-center">Status Perangkat</th>
                             <th class="text-center">Catatan</th>
                             <th class="text-center">Penanggung Jawab</th>
+<<<<<<< HEAD
+=======
+                            <th class="text-center">Aksi</th>
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
                         </tr>
                     </thead>
                     <tbody>
@@ -93,6 +103,27 @@
                                     <?php echo $item->nama; ?>
                                 </td>
                                 <td>
+<<<<<<< HEAD
+=======
+                                    <div class="d-flex justify-content-center">
+                                        <!-- Menggunakan flexbox untuk tata letak sejajar horizontal -->
+                                        <a href="update-status-perangkat" class="mr-2">
+                                            <button class="btn btn-default btn-xs" data-toggle="tooltip"
+                                                data-original-title="Fixed"><i
+                                                    class="fa-solid fa-check-to-slot font-14"></i></button>
+                                        </a>
+                                        <a href="<?php echo base_url('index.php/Teknisi/KelolaPerangkat/tampilEditPerangkat/' . $item->id); ?>"
+                                            class="mr-2">
+                                            <button class="btn btn-default btn-xs" data-toggle="tooltip"
+                                                data-original-title="Edit"><i class="fa fa-pencil font-14"></i></button>
+                                        </a>
+                                        <a href="<?php echo base_url('index.php/Teknisi/KelolaPerangkat/hapusPerangkat/' . $item->id); ?>"
+                                            class="mr-2">
+                                            <button class="btn btn-default btn-xs" data-toggle="tooltip"
+                                                data-original-title="Delete"><i class="fa fa-trash font-14"></i></button>
+                                        </a>
+                                    </div>
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
                                 </td>
                             </tr>
                         <?php endforeach; ?>

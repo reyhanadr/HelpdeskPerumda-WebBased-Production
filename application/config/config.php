@@ -23,7 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+<<<<<<< HEAD
 $config['base_url'] = 'http://localhost/ci-helpdesk_teknisi';
+=======
+$config['base_url'] = 'http://localhost/ci-helpdesk';
+>>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 /*
 |--------------------------------------------------------------------------
