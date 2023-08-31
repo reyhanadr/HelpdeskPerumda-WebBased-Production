@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-<<<<<<< HEAD
 class KelolaRequest extends CI_Controller
 {
     public function __construct()
@@ -29,32 +28,6 @@ class KelolaRequest extends CI_Controller
         $data['tickets'] = $this->RequestModel->getTicketsWithDetails($username);
         $data['users'] = $this->UserModel->getUserById($username);
         $user = $this->UserModel->getUserById($username);
-=======
-class KelolaRequest extends CI_Controller{
-    public function __construct(){
-        parent::__construct();
-        $this->load->helper('url'); 
-		$this->load->library('session');
-		$this->load->model('RequestModel');
-		$this->load->model('PerangkatModel');
-		$this->load->model('UserModel');
-		$this->load->model('NotifikasiModel');
-    }
-
-	public function index(){
-        if (!$this->session->userdata('logged_in')) {
-            redirect('Home/loginPage');
-        }
-		$data['active_menu'] = 'kelolaRequest';
-		$data['title'] = 'Login Page';
-        // Mendapatkan data username dari session
-		$username = $this->session->userdata('username'); 
-
-		// Kemudian Anda bisa meneruskan data username ke model
-		$data['tickets'] = $this->RequestModel->getTicketsWithDetails($username);
-		$data['users'] = $this->UserModel->getUserById($username);
-		$user = $this->UserModel->getUserById($username);
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
         $user_id = $user->user_id;
 
         // Mendapatkan Notifikasi
@@ -62,7 +35,6 @@ class KelolaRequest extends CI_Controller{
         $data['jml_notif'] = $this->NotifikasiModel->count_notif_by_id($user_id);
 
 
-<<<<<<< HEAD
         $this->load->view('karyawan/templates/header', $data);
         $this->load->view('karyawan/templates/sidebar', $data);
         $this->load->view('karyawan/kelolarequest');
@@ -80,29 +52,10 @@ class KelolaRequest extends CI_Controller{
         $username = $this->session->userdata('username');
 
         // Mendapatkan ID produk terakhir dari database
-=======
-		$this->load->view('karyawan/templates/header', $data);
-		$this->load->view('karyawan/templates/sidebar', $data);
-		$this->load->view('karyawan/kelolarequest');
-		$this->load->view('karyawan/templates/footer');
-	}
-	
-	public function tampilTambahRequest(){
-        if (!$this->session->userdata('logged_in')) {
-            redirect('Home/loginPage');
-        }
-		$data['active_menu'] = 'kelolaRequest';
-		$data['title'] = 'Login Page';
-        // Mendapatkan data username dari session
-		$username = $this->session->userdata('username');
-
-		// Mendapatkan ID produk terakhir dari database
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
         $lastReqID = $this->RequestModel->getlastReqID();
         $newReqID = $this->incrementReqID($lastReqID);
 
         // Memanggil method dari model
-<<<<<<< HEAD
         $data['users'] = $this->UserModel->getUserById($username);
         $data['perangkat'] = $this->PerangkatModel->getPerangkatUser($username);
         $data['kategori'] = $this->RequestModel->getKategori();
@@ -117,28 +70,11 @@ class KelolaRequest extends CI_Controller{
 
         // Dapatkan user_id
         $user = $this->UserModel->getUserById($username);
-=======
-		$data['users'] = $this->UserModel->getUserById($username);
-		$data['perangkat'] = $this->PerangkatModel->getPerangkatUser($username);
-		$data['kategori'] = $this->RequestModel->getKategori();
-    
-        // Kirim nilai $newReqID ke view menggunakan array data
-        $data['newReqID'] = $newReqID;
-    
-
-		// Kemudian Anda bisa meneruskan data username ke model
-		$data['users'] = $this->UserModel->getUserById($username);
-		$data['tanggalHariIni'] = date("Y-m-d"); // Format: Tahun-Bulan-Tanggal (contoh: 2023-07-14)
-
-        // Dapatkan user_id
-		$user = $this->UserModel->getUserById($username);
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
         $user_id = $user->user_id;
 
         // Mendapatkan Notifikasi
         $data['notif'] = $this->NotifikasiModel->get_notifikasi_by_id($user_id);
         $data['jml_notif'] = $this->NotifikasiModel->count_notif_by_id($user_id);
-<<<<<<< HEAD
 
         // Load view form dan kirim data ke view
         $this->load->view('karyawan/templates/header', $data);
@@ -148,16 +84,6 @@ class KelolaRequest extends CI_Controller{
     }
     private function incrementReqID($lastReqID)
     {
-=======
-        
-        // Load view form dan kirim data ke view
-		$this->load->view('karyawan/templates/header', $data);
-		$this->load->view('karyawan/templates/sidebar', $data);
-		$this->load->view('karyawan/tambah-request', $data);
-		$this->load->view('karyawan/templates/footer');
-	}
-	private function incrementReqID($lastReqID){
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
         // Ambil angka dari ID produk terakhir
         $lastNumber = (int) substr($lastReqID, 4);
 
@@ -175,12 +101,8 @@ class KelolaRequest extends CI_Controller{
         return $nextProductID;
     }
 
-<<<<<<< HEAD
     public function simpanRequest()
     {
-=======
-	public function simpanRequest() {
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
         $request_id = $this->input->post('request_id');
         $user_id = $this->input->post('user_id');
         $role_id = $this->input->post('role_id');
@@ -191,11 +113,7 @@ class KelolaRequest extends CI_Controller{
         $status = $this->input->post('status_perangkat');
         $deskripsi_permasalahan = $this->input->post('deskripsi_permasalahan');
         $prioritas = $this->input->post('prioritas');
-<<<<<<< HEAD
         $tanggal_dibuat = date('Y-m-d');
-=======
-		$tanggal_dibuat = date('Y-m-d');
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
         // Upload foto
         $config['upload_path'] = './assets/img/request/';
@@ -206,11 +124,6 @@ class KelolaRequest extends CI_Controller{
 
         // Cek apakah perangkat dengan perangkat_id sudah diajukan sebelumnya
         $existing_request = $this->RequestModel->getExistingRequestByPerangkat($perangkat_id);
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
         if ($existing_request) {
             $this->session->set_flashdata('error', 'Perangkat telah diajukan sebelumnya.');
             redirect('Karyawan/Kelolarequest');
@@ -222,11 +135,6 @@ class KelolaRequest extends CI_Controller{
             } else {
                 $upload_data = $this->upload->data();
                 $foto = $upload_data['file_name'];
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
                 $data_request = array(
                     'request_id' => $request_id,
                     'user_id' => $user_id,
@@ -240,46 +148,24 @@ class KelolaRequest extends CI_Controller{
                     'foto' => $foto,
                     'tanggal_dibuat' => $tanggal_dibuat
                 );
-<<<<<<< HEAD
 
                 $perangkat = $this->PerangkatModel->getPerangkatById($perangkat_id);
                 $nama_perangkat = $perangkat->nama_perangkat;
 
-=======
-    
-                $perangkat = $this->PerangkatModel->getPerangkatById($perangkat_id);
-                $nama_perangkat = $perangkat->nama_perangkat;
-    
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
                 $data_notif = array(
                     'user_id' => $user_id,
                     'request_id' => $request_id,
                     'kategori_id' => $kategori_id,
                     'department_id' => $department_id,
-<<<<<<< HEAD
                     'message_for_teknisi' => 'Perangkat ' . $nama_perangkat . 'Memiliki Masalah dan Butuh Diperbaiki.',
                     'message_for_karyawan' => 'Anda Telah Mengajukan Request untuk perangkat ' . $nama_perangkat . '.',
-=======
-                    'message_for_teknisi' => 'Perangkat '. $nama_perangkat . 'Memiliki Masalah dan Butuh Diperbaiki.',
-                    'message_for_karyawan' => 'Anda Telah Mengajukan Request untuk perangkat '. $nama_perangkat . '.',
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
                     'created_at' => $tanggal_dibuat,
                     'link' => 'Karyawan/Dashboard/Search?keyword=' . $request_id,
                     'is_read' => 'UNREAD'
                 );
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
-                $this->RequestModel->simpan_request($data_request);
                 $this->NotifikasiModel->tambah_notifikasi($data_notif);
-                $this->RequestModel->updateStatusPerangkat($perangkat_id, $status);
-                $this->session->set_flashdata('success', 'Request Support Ticket Telah Ditambahkan');
-                redirect('Karyawan/KelolaRequest');
             }
         }
-<<<<<<< HEAD
 
 
     }
@@ -296,23 +182,6 @@ class KelolaRequest extends CI_Controller{
 
         // Kueri dari Model
         $data['users'] = $this->UserModel->getUserById($username);
-=======
-        
-
-    }
-    
-    	public function tampilEditRequest($request_id){
-        if (!$this->session->userdata('logged_in')) {
-            redirect('Home/loginPage');
-        }
-    	$data['active_menu'] = 'kelolaRequest';
-		$data['title'] = 'Login Page';
-        // Mendapatkan data username dari session
-		$username = $this->session->userdata('username');
-
-        // Kueri dari Model
-		$data['users'] = $this->UserModel->getUserById($username);
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
         $data['request'] = $this->RequestModel->getRequestById($request_id);
 
         // Mengambil user_id
@@ -324,7 +193,6 @@ class KelolaRequest extends CI_Controller{
         $data['jml_notif'] = $this->NotifikasiModel->count_notif_by_id($user_id);
 
         // Load view form dan kirim data ke view
-<<<<<<< HEAD
         $this->load->view('karyawan/templates/header', $data);
         $this->load->view('karyawan/templates/sidebar', $data);
         $this->load->view('karyawan/edit-request', $data);
@@ -337,57 +205,30 @@ class KelolaRequest extends CI_Controller{
         $prioritas = $this->input->post('prioritas');
         $catatan = $this->input->post('catatan');
 
-=======
-		$this->load->view('karyawan/templates/header', $data);
-		$this->load->view('karyawan/templates/sidebar', $data);
-		$this->load->view('karyawan/edit-request', $data);
-		$this->load->view('karyawan/templates/footer');
-	}
-
-    public function updateRequest($request_id) {
-        $deskripsi = $this->input->post('deskripsi');
-        $prioritas = $this->input->post('prioritas');
-        $catatan = $this->input->post('catatan');
-    
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
         // Upload foto baru (jika ada)
         if (!empty($_FILES['foto']['name'])) {
             $config['upload_path'] = './assets/img/request/';
             $config['allowed_types'] = 'jpg|jpeg|png';
             $config['max_size'] = 2048;
-<<<<<<< HEAD
 
             $this->load->library('upload', $config);
 
-=======
-    
-            $this->load->library('upload', $config);
-    
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
             if ($this->upload->do_upload('foto')) {
                 $upload_data = $this->upload->data();
                 $foto = $upload_data['file_name'];
             } else {
                 $error = $this->upload->display_errors();
                 $this->session->set_flashdata('error', $error);
-<<<<<<< HEAD
                 redirect('Karyawan/KelolaRequest/tampilEditRequest/' . $request_id);
             }
         }
 
-=======
-                redirect('Karyawan/KelolaRequest/tampilEditRequest/'.$request_id);
-            }
-        }
-    
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
         // Data yang akan diupdate
         $data = array(
             'deskripsi_permasalahan' => $deskripsi,
             'prioritas' => $prioritas,
             'catatan' => $catatan
         );
-<<<<<<< HEAD
 
         if (!empty($foto)) {
             $data['foto'] = $foto;
@@ -396,66 +237,30 @@ class KelolaRequest extends CI_Controller{
         // Lakukan update
         $this->RequestModel->updateRequest($request_id, $data);
 
-=======
-    
-        if (!empty($foto)) {
-            $data['foto'] = $foto;
-        }
-    
-        // Lakukan update
-        $this->RequestModel->updateRequest($request_id, $data);
-    
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
         $this->session->set_flashdata('success', 'Request telah diperbarui');
         redirect('Karyawan/KelolaRequest/');
     }
 
-<<<<<<< HEAD
     public function setStatusToRunning($request_id)
     {
         // Ambil data request berdasarkan ID
         $request = $this->RequestModel->getRequestById($request_id);
 
-=======
-    public function setStatusToRunning($request_id) {
-        // Ambil data request berdasarkan ID
-        $request = $this->RequestModel->getRequestById($request_id);
-    
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
         // Jika status saat ini adalah "FIXED", ubah menjadi "RUNNING"
         if ($request->status === 'FIXED') {
             $newStatus = 'RUNNING';
             $this->RequestModel->updateStatusToRunning($request_id, $newStatus);
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
             // Set flash data untuk pesan sukses
             $this->session->set_flashdata('success', 'Status berhasil diubah menjadi RUNNING.');
-            redirect('Karyawan/KelolaRequest');
         } elseif ($request->status === 'PENDING') {
-            // Set flash data untuk pesan error
-            $this->session->set_flashdata('error', 'Status tidak dapat diubah ke RUNNING Karena Sedang Ditinjau untuk diperbaiki.');
-            redirect('Karyawan/KelolaRequest');
-<<<<<<< HEAD
         } elseif ($request->status === 'NOTFIXED') {
-=======
-        }elseif ($request->status === 'NOTFIXED') {
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
             // Set flash data untuk pesan error
             $this->session->set_flashdata('error', 'Status tidak dapat diubah ke RUNNING Karena Perangkat Tidak dapat diperbaiki.');
             redirect('Karyawan/KelolaRequest');
         }
     }
-<<<<<<< HEAD
 
 
 
-=======
-    
-    
-    
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 
 }

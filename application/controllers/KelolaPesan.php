@@ -17,11 +17,7 @@ class KelolaPesan extends CI_Controller{
         if (!$this->session->userdata('logged_in')) {
             redirect('Home/loginPage');
         }
-<<<<<<< HEAD
 		$data['active_menu'] = 'pesan-view';
-=======
-		$data['active_menu'] = 'kelolaRequest';
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 		$data['title'] = 'Chat Page';
         // Mendapatkan data username dari session
 		$username = $this->session->userdata('username'); 
@@ -49,11 +45,7 @@ class KelolaPesan extends CI_Controller{
         if (!$this->session->userdata('logged_in')) {
             redirect('Home/loginPage');
         }
-<<<<<<< HEAD
 		$data['active_menu'] = 'pesan-view';
-=======
-		$data['active_menu'] = 'kelolaRequest';
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
 		$data['title'] = 'Chat Page';
         // Mendapatkan data username dari session
 		$username = $this->session->userdata('username'); 
@@ -103,11 +95,7 @@ class KelolaPesan extends CI_Controller{
             redirect('Home/loginPage');
         }
             
-<<<<<<< HEAD
         $data['active_menu'] = 'pesan-view';
-=======
-        $data['active_menu'] = 'kelolaRequest';
->>>>>>> 0f9e57a2c68b4616c387478a257b1c5a4ee3f73e
         $data['title'] = 'Chat Page';
         // Mendapatkan data username dari session
         $username = $this->session->userdata('username'); 
